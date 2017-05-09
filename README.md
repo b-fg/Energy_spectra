@@ -1,4 +1,4 @@
-###**Energy spectra**
+# **Energy spectra**
 
 Compute the energy spectra from a velocity vector field of a uniform computational domain by means of FFTs.
 The velocity vector field can be one-, two- or three-dimensional.
