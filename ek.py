@@ -6,7 +6,7 @@ Created on Sat Apr 29 14:22:20 2017
 @style: PEP8
 
 @description:
-Script to calculate the energy spectra E = E(k) of a one- two- or three-dimensional velocity vector field.
+Script to calculate the energy spectra E = E(k) from a one- two- or three-dimensional velocity vector field.
 Included there is a function to load binary data and a function to generate and save the plot which
 can be helpful.
 
@@ -404,11 +404,11 @@ The normal steps to generate an energy spectra plot are defined in the main func
     I tend to use pickle as is faster if you have already loaded the data in pyhton before.
 2. Calculate wavenumber vector: Either 1D, 2D or 3D in any axis you want (which matches the size of the
     velocity field vector).
-3. Transoform velocity field from real to Fourier space: You can use numpy.fft which is very useful for this.
+4. Transoform velocity field from real to Fourier space: You can use numpy.fft which is very useful for this.
     For a 2D field is: uk = np.fft.fft2(u)/(N*M). Note you have to scale it with the total field size N*M.
-3. Calculate energy spectra: Use the KE function in the dimensions of your velocity field,
+5. Calculate energy spectra: Use the KE function in the dimensions of your velocity field,
     e.g. KE = KE2D(uk, vk, kx, ky)
-4. Plot your energy spectra: Use the function plotE and just pass the KE array and the name of the file,
+6. Plot your energy spectra: Use the function plotE and just pass the KE array and the name of the file,
     e.g. plotE(KE, 'test.pdf')
 
 That's all!
