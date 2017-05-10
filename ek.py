@@ -332,6 +332,8 @@ def read_data(file, dim, dtype, stream, periodic):
             in the binary file (can happen in some Fortran compilers if access != 'stream').
         periodic: If the user desires to make the data spanwise periodic (true) or not (false).
     """
+    global L
+
     if dim == 2:
         if stream:
             shape = (M, N, 2)
@@ -369,10 +371,11 @@ def read_data(file, dim, dtype, stream, periodic):
                 u = np.dstack((u, u[:, :, 0]))
                 v = np.dstack((v, v[:, :, 0]))
                 w = np.dstack((w, w[:, :, 0]))
+                L = L+1
             u = u.astype(np.float64, copy=False)
             v = v.astype(np.float64, copy=False)
             w = w.astype(np.float64, copy=False)
-            return(u, v, w)    
+            return(u, v, w)
         else:
             shape = (L, M, N, 5)
             f = open(file, 'rb')
@@ -387,6 +390,7 @@ def read_data(file, dim, dtype, stream, periodic):
                 u = np.dstack((u, u[:, :, 0]))
                 v = np.dstack((v, v[:, :, 0]))
                 w = np.dstack((w, w[:, :, 0]))
+                L = L+1
             u = u.astype(np.float64, copy=False)
             v = v.astype(np.float64, copy=False)
             w = w.astype(np.float64, copy=False)
