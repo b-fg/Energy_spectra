@@ -1,4 +1,4 @@
 *
 !*.py
+!*.md
 !*LICENSE
-!*README

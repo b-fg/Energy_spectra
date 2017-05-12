@@ -17,6 +17,8 @@ Change the constants to whatever suits your computational domain, set the desire
 bandwidth (kres) and your file containing the velocity data.
 
 @contact: b.fontgarcia@soton.ac.uk
+
+Distributed under the GNU GENERAL PUBLIC LICENSE.
 """
 
 # Imports
